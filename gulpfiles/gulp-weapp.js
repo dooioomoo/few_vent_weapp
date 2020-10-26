@@ -62,7 +62,7 @@ const cleaner = (path) =>
 module.exports = {
     dist: builder.gulp.series(
         cleaner(esDir),
-        // tsCompiler(esDir, esConfig),
+        tsCompiler(esDir, esConfig),
         lessCompiler(esDir),
         staticCopier(esDir),
     ),
