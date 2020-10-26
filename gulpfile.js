@@ -1,6 +1,7 @@
 
 const importPath = "./";
 const path = require('path');
+const { exec } = require('child_process');
 
 global.requireLocal = function (name) {
     return require(path.join(__dirname, name))

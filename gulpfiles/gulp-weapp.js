@@ -3,9 +3,17 @@ const esConfig = builder.path.resolve(__dirname, '../src/vant/tsconfig.json');
 const src = builder.path.resolve(__dirname, '../src/vant/packages');
 const baseCssPath = builder.path.resolve(__dirname, '../src/vant/packages/common/index.wxss');
 const exec = builder.util.promisify(require('child_process').exec);
-const esDir = builder.path.resolve(__dirname, '../../dist');
+const esDir = builder.path.resolve(__dirname, '../../vant_lib');
+const fs = require('fs');
 
-
+fs.readFile(esConfig, (err, data) => {
+    if (err) throw err;
+    let new_tsCfg = JSON.parse(data);
+    new_tsCfg.compilerOptions.outDir = esDir;
+    var json = JSON.stringify(new_tsCfg);
+    fs.writeFile(esConfig, json, 'utf8', () => { });
+    // console.log(new_tsCfg);
+});
 
 console.log('path:' + __dirname);
 console.log('src:' + src);
