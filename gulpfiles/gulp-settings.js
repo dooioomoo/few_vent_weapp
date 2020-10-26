@@ -43,13 +43,13 @@ module.exports = {
                 exportPath + "css/",
             ],
         },
-        wechat: {
+        weapp: {
             mini: true,
             mini_ext: false,
             concat: false,
             single: true,
             import: [
-                "../wechat/**/*.less"
+                "../pages/**/*.less"
             ],
             export: [
                 ".",
@@ -73,13 +73,13 @@ module.exports = {
                 exportPath + "css/",
             ],
         },
-        wechat: {
+        weapp: {
             mini: true,
             mini_ext: false,
             concat: false,
             single: true,
             import: [
-                "../wechat/**/*.scss"
+                "../pages/**/*.scss"
             ],
             export: [
                 ".",
@@ -105,18 +105,6 @@ module.exports = {
             ],
             export: [
                 exportPath + 'js/'
-            ],
-        },
-        wechat: {
-            mini: true,
-            mini_ext: false,
-            concat: false,
-            single: true,
-            import: [
-                "../wechat/**/*.js"
-            ],
-            export: [
-                ".",
             ],
         },
     },
