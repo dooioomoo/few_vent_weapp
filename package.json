@@ -1,0 +1,56 @@
+{
+  "name": "few_vent_weapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "build": "gulp",
+    "watch": "gulp watch",
+    "gulp_init": "npm i -g autoprefixer browser-sync child_process cssnano dotenv gulp gulp-clean gulp-concat gulp-connect-php gulp-cssnano gulp-eslint gulp-if gulp-imagemin gulp-insert gulp-less gulp-minify gulp-newer gulp-plumber gulp-postcss postcss gulp-preprocess gulp-rename gulp-sass gulp-uglify gulp-wait imagemin-gifsicle imagemin-jpegtran imagemin-svgo merge-stream webpack webpack-stream",
+    "init": "cd src/vent && git pull vent dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dooioomoo/few_vent_weapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dooioomoo/few_vent_weapp/issues"
+  },
+  "homepage": "https://github.com/dooioomoo/few_vent_weapp#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "browser-sync": "^2.26.12",
+    "child_process": "^1.0.2",
+    "cssnano": "^4.1.10",
+    "dotenv": "^8.2.0",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect-php": "^1.0.3",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-eslint": "^6.0.0",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-insert": "^0.5.0",
+    "gulp-less": "^4.0.1",
+    "gulp-minify": "^3.1.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-preprocess": "^3.0.3",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-wait": "0.0.2",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^8.0.0",
+    "merge-stream": "^2.0.0",
+    "webpack": "^4.44.1",
+    "webpack-stream": "^5.2.1"
+  }
+}

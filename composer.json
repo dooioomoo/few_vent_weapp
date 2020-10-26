@@ -1,0 +1,28 @@
+{
+    "name": "dooioomoo/few_tank",
+    "description": "Front-end web design framework",
+    "authors": [
+        {
+            "name": "Ryan soong",
+            "homepage": "http://www.fduit.com/"
+        }
+    ],
+    "license": "MIT",
+    "type": "project",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        }
+    ],
+    "require": {
+        "php": "^5.5 || ^7.0",
+        "composer/installers": "^v1.3",
+        "twitter/bootstrap": "^4.5",
+        "fortawesome/font-awesome": "^5.0",
+        "components/jquery": "^3.4.1",
+        "components/jqueryui": "^1.12.1",
+        "webfontkit/roboto": "^1.0",
+        "webfontkit/open-sans": "^1.0"
+    }
+}
