@@ -2,6 +2,9 @@ const gulp = require("gulp");
 const sass = require("gulp-sass");
 const gulpif = require("gulp-if");
 const less = require("gulp-less");
+const util = require("util");
+const path = require("path");
+const insert = require('gulp-insert');
 const concat = require("gulp-concat");
 const wait = require("gulp-wait");
 const autoprefixer = require("autoprefixer");
@@ -21,8 +24,11 @@ const dotenv = require("dotenv");
 
 module.exports = {
     gulp: gulp,
+    util: util,
     sass: sass,
     less: less,
+    insert: insert,
+    path: path,
     concat: concat,
     gulpif: gulpif,
     preprocess: preprocess,
