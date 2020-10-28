@@ -1,6 +1,6 @@
 
 const importPath = "./";
-const path = require('path');
+global.path = require('path');
 const { exec } = require('child_process');
 
 global.requireLocal = function (name) {
@@ -46,6 +46,7 @@ exports.js = builder.gulp.series.apply(builder.gulp, [init_compile(compile.js, '
 exports.images = builder.gulp.series.apply(builder.gulp, init_compile(compile.images, 'images'));
 exports.fonts = builder.gulp.series.apply(builder.gulp, init_compile(compile.fonts, 'fonts'));
 exports.imgmini = compile.images.ImageMini;
+exports.test = (done) => { console.log(setting.base); done(); };
 
 exports.init = builder.gulp.series(
     exports.sass,

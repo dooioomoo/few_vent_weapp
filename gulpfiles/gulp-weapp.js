@@ -3,7 +3,12 @@ const esConfig = builder.path.resolve(__dirname, '../src/vant/tsconfig.json');
 const src = builder.path.resolve(__dirname, '../src/vant/packages');
 const baseCssPath = builder.path.resolve(__dirname, '../src/vant/packages/common/index.wxss');
 const exec = builder.util.promisify(require('child_process').exec);
-const esDir = builder.path.resolve(__dirname, '../../vant_lib');
+var string = setting.base.weapp_dist;
+if (string.charAt(0) == "/") string = string.substr(1);
+if (string.charAt(string.length - 1) == "/") string = string.substr(0, string.length - 1);
+const esDir = builder.path.resolve(__dirname, "../" + string);
+
+console.log(esDir);
 const fs = require('fs');
 
 fs.readFile(esConfig, (err, data) => {

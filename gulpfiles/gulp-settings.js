@@ -1,9 +1,16 @@
 
-const exportPath = "../assets/";
+const miniprogram_json = requireLocal('../project.config.json');
+var miniprogram_path = "../";
+if (typeof miniprogram_json.miniprogramRoot != 'undefined') {
+    miniprogram_path = "../" + miniprogram_json.miniprogramRoot;
+}
+const miniprogram = miniprogram_path;
+const exportPath = miniprogram + "assets/";
 const importPath = "./src/";
 const JsGlobal = requireLocal(importPath + "js/js-require.js");
 const vo = "vendor/";
 const commonFonts = exportPath + "fonts/";
+const weapp_dist = miniprogram + "vant_lib";
 
 /**
  * sass,less等编译参数
@@ -17,7 +24,9 @@ const commonFonts = exportPath + "fonts/";
 module.exports = {
     styleSuffix: ".css",
     base: {
+        miniprogram: miniprogram,
         exportPath: exportPath,
+        weapp_dist: weapp_dist,
         importPath: importPath,
         clearFolder: exportPath + "temp/",
     },
@@ -49,7 +58,7 @@ module.exports = {
             concat: false,
             single: true,
             import: [
-                "../pages/**/*.less"
+                miniprogram + "pages/**/*.less"
             ],
             export: [
                 ".",
@@ -79,7 +88,7 @@ module.exports = {
             concat: false,
             single: true,
             import: [
-                "../pages/**/*.scss"
+                miniprogram + "pages/**/*.scss"
             ],
             export: [
                 ".",
