@@ -1,28 +1,32 @@
-// const libConfig = builder.path.resolve(__dirname, '../src/vant/tsconfig.lib.json');
+const fs = require('fs');
 const esConfig = builder.path.resolve(__dirname, '../src/vant/tsconfig.json');
 const src = builder.path.resolve(__dirname, '../src/vant/packages');
+const parent_path = builder.path.resolve(__dirname, '../src/vant');
 const baseCssPath = builder.path.resolve(__dirname, '../src/vant/packages/common/index.wxss');
 const exec = builder.util.promisify(require('child_process').exec);
 var string = setting.base.weapp_dist;
 if (string.charAt(0) == "/") string = string.substr(1);
 if (string.charAt(string.length - 1) == "/") string = string.substr(0, string.length - 1);
 const esDir = builder.path.resolve(__dirname, "../" + string);
+const libConfig = builder.path.resolve(__dirname, '../src/vant/tsconfig.lib.json');
 
-console.log(esDir);
-const fs = require('fs');
 
-fs.readFile(esConfig, (err, data) => {
-    if (err) throw err;
-    let new_tsCfg = JSON.parse(data);
-    new_tsCfg.compilerOptions.outDir = esDir;
-    var json = JSON.stringify(new_tsCfg);
-    fs.writeFile(esConfig, json, 'utf8', () => { });
-    // console.log(new_tsCfg);
-});
+var tofile = function (cfg) {
+    fs.readFile(cfg, (err, data) => {
+        if (err) return;
+        let new_tsCfg = JSON.parse(data);
+        new_tsCfg.compilerOptions.outDir = esDir;
+        var json = JSON.stringify(new_tsCfg);
+        fs.writeFile(cfg, json, 'utf8', () => { });
+        // console.log(new_tsCfg);
+    });
+}
+tofile(esConfig);
+tofile(libConfig);
 
-console.log('path:' + __dirname);
-console.log('src:' + src);
-console.log('esDir:' + esDir);
+// console.log('path:' + __dirname);
+// console.log('src:' + src);
+// console.log('esDir:' + esDir);
 
 const tsCompiler = (dist, config) =>
     async function compileTs() {
@@ -42,6 +46,8 @@ const staticCopier = (dist) =>
         copier(dist, 'wxs'),
         copier(dist, 'json')
     );
+
+
 
 const lessCompiler = (dist) =>
     function compileLess() {
@@ -75,7 +81,8 @@ const cleaner = (path) =>
 module.exports = {
     dist: builder.gulp.series(
         cleaner(esDir),
-        tsCompiler(esDir, esConfig),
+        // tsCompiler(esDir, esConfig),
+        tsCompiler(esDir, libConfig),
         lessCompiler(esDir),
         staticCopier(esDir),
     ),

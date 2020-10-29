@@ -58,7 +58,7 @@ module.exports = {
             concat: false,
             single: true,
             import: [
-                miniprogram + "pages/**/*.less"
+                miniprogram + "**/*.less"
             ],
             export: [
                 ".",
@@ -88,7 +88,7 @@ module.exports = {
             concat: false,
             single: true,
             import: [
-                miniprogram + "pages/**/*.scss"
+                miniprogram + "**/*.scss"
             ],
             export: [
                 ".",
