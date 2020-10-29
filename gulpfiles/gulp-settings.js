@@ -22,7 +22,7 @@ const weapp_dist = miniprogram + "vant_lib";
 
 
 module.exports = {
-    styleSuffix: ".css",
+    styleSuffix: ".wxss",
     base: {
         miniprogram: miniprogram,
         exportPath: exportPath,
@@ -36,22 +36,22 @@ module.exports = {
         port: '3000',
     },
     less: {
-        common: {
-            import: [
-                importPath + "less/common/common.less"
-            ],
-            export: [
-                exportPath + "css/",
-            ],
-        },
-        app: {
-            import: [
-                importPath + "less/app/app.less"
-            ],
-            export: [
-                exportPath + "css/",
-            ],
-        },
+        // common: {
+        //     import: [
+        //         importPath + "less/common/common.less"
+        //     ],
+        //     export: [
+        //         exportPath + "css/",
+        //     ],
+        // },
+        // app: {
+        //     import: [
+        //         importPath + "less/app/app.less"
+        //     ],
+        //     export: [
+        //         exportPath + "css/",
+        //     ],
+        // },
         weapp: {
             mini: true,
             mini_ext: false,
@@ -66,22 +66,22 @@ module.exports = {
         },
     },
     sass: {
-        common: {
-            import: [
-                importPath + "sass/common/common.scss"
-            ],
-            export: [
-                exportPath + "css/",
-            ],
-        },
-        app: {
-            import: [
-                importPath + "sass/app/app.scss"
-            ],
-            export: [
-                exportPath + "css/",
-            ],
-        },
+        // common: {
+        //     import: [
+        //         importPath + "sass/common/common.scss"
+        //     ],
+        //     export: [
+        //         exportPath + "css/",
+        //     ],
+        // },
+        // app: {
+        //     import: [
+        //         importPath + "sass/app/app.scss"
+        //     ],
+        //     export: [
+        //         exportPath + "css/",
+        //     ],
+        // },
         weapp: {
             mini: true,
             mini_ext: false,

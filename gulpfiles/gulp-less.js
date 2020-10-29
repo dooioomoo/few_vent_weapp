@@ -28,6 +28,7 @@ var compileless = function (target, done) {
         .pipe(builder.gulpif(concat, builder.concat(target + setting.styleSuffix)))
         .pipe(builder.gulpif(single, builder.gulp.dest(setting.base.clearFolder)))
         .pipe(builder.gulpif(mini_ext, builder.rename({ suffix: ".min" })))
+        .pipe(builder.rename({ extname: setting.styleSuffix }))
         .pipe(builder.postcss(postcss))
         .pipe(builder.gulp.dest(setting.less[target].export));
 };

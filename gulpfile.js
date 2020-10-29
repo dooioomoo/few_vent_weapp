@@ -50,9 +50,10 @@ exports.test = (done) => { console.log(setting.base); done(); };
 
 exports.init = builder.gulp.series(
     exports.sass,
-    exports.js,
+    // exports.less,
+    // exports.js,
     exports.images,
-    exports.fonts,
+    // exports.fonts,
     exports.imgmini,
     cleanFile.clear,
 );

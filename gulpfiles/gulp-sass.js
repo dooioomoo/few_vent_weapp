@@ -25,9 +25,10 @@ var compileSass = function (target, done) {
         .src(setting.sass[target].import, { base: "./" })
         .pipe(builder.plumber())
         .pipe(builder.sass({ includePaths: [setting.server.root], outputStyle: "expanded" }))
-        .pipe(builder.gulpif(concat, builder.concat(target + setting.styleSuffix)))
+        .pipe(builder.gulpif(concat, builder.concat(target)))
         .pipe(builder.gulpif(single, builder.gulp.dest(setting.base.clearFolder)))
         .pipe(builder.gulpif(mini_ext, builder.rename({ suffix: ".min" })))
+        .pipe(builder.rename({ extname: setting.styleSuffix }))
         .pipe(builder.postcss(postcss))
         .pipe(builder.gulp.dest(setting.sass[target].export));
 };

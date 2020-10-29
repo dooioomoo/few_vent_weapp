@@ -1,22 +1,22 @@
 module.exports = {
     init: (done) => {
         const watchGroup = {
-            CommonSass: [
-                [setting.base.importPath + 'sass/common/**/*',],
-                [compile.sass.common, cleanFile.clear]
-            ],
-            AppSass: [
-                [setting.base.importPath + 'sass/app/**/*'],
-                [compile.sass.app, cleanFile.clear]
-            ],
-            CommonLess: [
-                [setting.base.importPath + 'less/common/**/*',],
-                [compile.less.common, cleanFile.clear]
-            ],
-            AppLess: [
-                [setting.base.importPath + 'less/app/**/*'],
-                [compile.less.app, cleanFile.clear]
-            ],
+            // CommonSass: [
+            //     [setting.base.importPath + 'sass/common/**/*',],
+            //     [compile.sass.common, cleanFile.clear]
+            // ],
+            // AppSass: [
+            //     [setting.base.importPath + 'sass/app/**/*'],
+            //     [compile.sass.app, cleanFile.clear]
+            // ],
+            // CommonLess: [
+            //     [setting.base.importPath + 'less/common/**/*',],
+            //     [compile.less.common, cleanFile.clear]
+            // ],
+            // AppLess: [
+            //     [setting.base.importPath + 'less/app/**/*'],
+            //     [compile.less.app, cleanFile.clear]
+            // ],
             CommonJs: [
                 [
                     setting.base.importPath + "js/common/**/*",
@@ -32,6 +32,14 @@ module.exports = {
             commonImgs: [
                 setting.images.common.import,
                 [compile.images.common]
+            ],
+            weappSass: [
+                setting.sass.weapp.import,
+                [compile.sass.weapp, cleanFile.clear]
+            ],
+            weappLess: [
+                setting.less.weapp.import,
+                [compile.less.weapp, cleanFile.clear]
             ],
         };
 
