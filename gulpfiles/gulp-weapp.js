@@ -18,15 +18,14 @@ var tofile = function (cfg) {
         new_tsCfg.compilerOptions.outDir = esDir;
         var json = JSON.stringify(new_tsCfg);
         fs.writeFile(cfg, json, 'utf8', () => { });
-        // console.log(new_tsCfg);
     });
 }
 tofile(esConfig);
 tofile(libConfig);
 
-// console.log('path:' + __dirname);
-// console.log('src:' + src);
-// console.log('esDir:' + esDir);
+console.log('path:' + __dirname);
+console.log('src:' + src);
+console.log('esDir:' + esDir);
 
 const tsCompiler = (dist, config) =>
     async function compileTs() {
