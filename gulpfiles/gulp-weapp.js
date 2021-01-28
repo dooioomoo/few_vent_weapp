@@ -9,6 +9,7 @@ if (string.charAt(0) == "/") string = string.substr(1);
 if (string.charAt(string.length - 1) == "/") string = string.substr(0, string.length - 1);
 const esDir = builder.path.resolve(__dirname, "../" + string);
 const libConfig = builder.path.resolve(__dirname, '../src/vant/tsconfig.lib.json');
+const exampleConfig = builder.path.resolve(__dirname, '../src/vant/tsconfig.example.json');
 
 
 var tofile = function (cfg) {
@@ -22,6 +23,7 @@ var tofile = function (cfg) {
 }
 tofile(esConfig);
 tofile(libConfig);
+tofile(exampleConfig);
 
 console.log('path:' + __dirname);
 console.log('src:' + src);
@@ -82,6 +84,12 @@ module.exports = {
         cleaner(esDir),
         // tsCompiler(esDir, esConfig),
         tsCompiler(esDir, libConfig),
+        lessCompiler(esDir),
+        staticCopier(esDir),
+    ),
+    buildExample: builder.gulp.series(
+        cleaner(esDir),
+        tsCompiler(esDir, exampleConfig),
         lessCompiler(esDir),
         staticCopier(esDir),
     ),
