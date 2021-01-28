@@ -8,6 +8,7 @@
     "watch": "gulp watch",
     "gulp_init": "npm i -g autoprefixer util typescript tscpaths browser-sync child_process cssnano dotenv gulp gulp-clean gulp-concat gulp-connect-php gulp-cssnano gulp-eslint gulp-if gulp-imagemin gulp-insert gulp-less gulp-minify gulp-newer gulp-plumber gulp-postcss postcss gulp-preprocess gulp-rename gulp-sass gulp-uglify gulp-wait imagemin-gifsicle imagemin-jpegtran imagemin-svgo merge-stream webpack webpack-stream miniprogram-api-typings miniprogram-ci @vant/cli @vant/doc @vant/eslint-config @vant/markdown-loader @vant/stylelint-config @types/wechat-miniprogram @babel/core @babel/plugin-syntax-dynamic-import @babel/preset-env ",
     "init": "npx rimraf @vant src/vant && git clone https://github.com/youzan/vant-icons.git ./@vant/icons && cd src && mkdir vant && cd vant && git init && git remote add vent https://github.com/youzan/vant-weapp.git && git config core.sparsecheckout true && echo packages >> .git/info/sparse-checkout && echo tsconfig.lib.json >> .git/info/sparse-checkout && echo tsconfig.json >> .git/info/sparse-checkout && echo tsconfig.example.json >> .git/info/sparse-checkout && git pull vent dev && gulp weapp && cd ../../ && npx rimraf @vant src/vant",
+    "init2": "npx rimraf src/vant && cd src && mkdir vant && cd vant && git init && git remote add vent https://github.com/youzan/vant-weapp.git && git pull vent dev && npm i && npx cpx ../../gulpfiles/dev.js ./build -C && node build/dev.js && cd ../../ && npx rimraf src/vant",
     "test": "gulp test"
   },
   "repository": {
